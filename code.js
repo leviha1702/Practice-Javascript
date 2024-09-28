@@ -50,13 +50,19 @@ console.log(kt_SNT(9));
 console.log(kt_SNT(5));
 // dao nguoc chuoi
 function reverseString(str){
-    let newString="";
+    let newString=("");
     for(let i=str.length;i>=0;i--){
         newString+=str[i];
     }
     return newString;
 }
 console.log(reverseString(' L Vit Ha '));
+// mang va doi tuong
+let students=[{name:"Ha",grade:10},{name:"Hamter",grade:8.5},{name:"Allice",grade:5.5}];
+for(let student of students ){
+    if(student.grade>=8) console.log(student.name +" gioi");
+}
+
 
 
 
