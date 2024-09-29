@@ -87,6 +87,19 @@ function sumArray(arr){
     return sum;
 }
 console.log('tong mang :' + sumArray([6,9,10,11]));
+// xoa bo phan tu trung lap 
+function removeDuplicates(arr){
+    for(let i=0;i<arr.length-1;i++){
+        for(let j=1;j<arr.length;j++){
+            if(arr[i]===a[j]) arr.splice(j,1);
+        }
+    }
+    return arr;
+}
+const array = [1,2,2,3,3,4,6];
+console.log(removeDuplicates(array));
+
+
 
 
 
