@@ -12,8 +12,8 @@ function sum(a, b){
     s=a+b;
     return s;
  }
-console.log(sum(5.1, 6));
-console.log(sum(7, 12));
+console.log('tong hai so:' + sum(5.1, 6));
+console.log('tong hai so la:' + sum( 7, 12));
 // kiem tra so chan và so le
 function checkOddEven(number){
     if(number%2==0)
@@ -50,7 +50,7 @@ console.log(kt_SNT(9));
 console.log(kt_SNT(5));
 // dao nguoc chuoi
 function reverseString(str){
-    let newString=("");
+    let newString="";
     for(let i=str.length;i>=0;i--){
         newString+=str[i];
     }
@@ -62,6 +62,31 @@ let students=[{name:"Ha",grade:10},{name:"Hamter",grade:8.5},{name:"Allice",grad
 for(let student of students ){
     if(student.grade>=8) console.log(student.name +" gioi");
 }
+// FizzBuzz
+function fizzBuzz(n){
+    for(let i=1;i<=n;i++){
+        if(i%3==0&&i%5!=0) console.log('Fizz');
+        else if(i%5==0&&i%3!=0) console.log('Buzz');
+        else if(i%3==0&&i%5==0) console.log('FizzBuzz');
+        else console.log(i);
+    }
+}
+fizzBuzz(15);
+// sap xep thu tu tang dan cua mang
+function compareNumbers(a,b){
+    return a-b;
+}
+let a = [1,5,4,2];
+console.log(a.sort(compareNumbers));
+// tong ptu trong mang
+function sumArray(arr){
+    let sum=0;
+    for(let i=0;i<arr.length;i++){
+        sum+=arr[i];
+    }
+    return sum;
+}
+console.log('tong mang :' + sumArray([6,9,10,11]));
 
 
 
