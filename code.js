@@ -74,7 +74,7 @@ function fizzBuzz(n){
 fizzBuzz(15);
 // sap xep thu tu tang dan cua mang
 function compareNumbers(a,b){
-    return a-b;
+    return b-a;
 }
 let a = [1,5,4,2];
 console.log(a.sort(compareNumbers));
@@ -127,6 +127,27 @@ function isPalindrome(str){
     else return false;
 }
 console.log(isPalindrome("racecar"));
+// tim so lon t2 trong mang
+function secondLargest(arr){
+    let n=arr.length;
+    let second,largest;
+    if(arr[1]>arr[0]){
+        second=arr[0];
+        largest=arr[1];
+    } else {
+        second=arr[1];
+        largest=arr[0];
+    }
+    for(let i=2;i<n;i++){
+        if(largest<arr[i]){
+            second=largest;
+            largest=arr[i];
+        }else if(second<arr[i])
+            second=arr[i];
+    }
+    return second;
+}
+console.log('so lon nhat thu 2:' + secondLargest([3,5,7,8]));
 
 
 
