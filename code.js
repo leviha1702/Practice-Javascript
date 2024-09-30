@@ -98,7 +98,35 @@ function removeDuplicates(arr){
 }
 const array = [1,2,2,3,3,4,6];
 console.log(removeDuplicates(array));
-
+// day fibonancci thu n
+function fibonancci(n){
+    let f0=0;
+    let f1=1;
+    let fn=1;
+    if(n<0) return -1;
+    else if(n==0 || n==1) return n;
+    else {
+        for(let i=2;i<n;i++){
+            f0=f1;
+            f1=fn;
+            fn=f0+f1;
+        }
+    }
+    return fn;
+}
+console.log(fibonancci(10));
+// ktra chuoi doi xung
+function isPalindrome(str){
+    let temp=0;
+    let n=str.length;
+    for(let i=0;i<n/2;i++){
+        if(str[i]!=str[n-1-i])
+            temp++;
+    }
+    if (temp==0) return true;
+    else return false;
+}
+console.log(isPalindrome("racecar"));
 
 
 
