@@ -51,7 +51,7 @@ console.log(kt_SNT(5));
 // dao nguoc chuoi
 function reverseString(str){
     let newString="";
-    for(let i=str.length;i>=0;i--){
+    for(let i=str.length-1;i>=0;i--){
         newString+=str[i];
     }
     return newString;
@@ -148,7 +148,26 @@ function secondLargest(arr){
     return second;
 }
 console.log('so lon nhat thu 2:' + secondLargest([3,5,7,8]));
-
+// delete space start and end
+let s =" tha  yeu  duoi ";
+let newString =s.trim();
+console.log(newString);
+// dao nguoc tu trong cau
+function reverseWords(str){
+    return str.split(' ').map(word => word.split('').reverse().join('')).join(' ');
+}
+console.log("chuoi sau khi dao nguoc: " + reverseWords(newString));
+// tinh tong chu so
+function sumDigits(n){
+    let numStr = n.toString();//b1:chuyen so n thanh chuoi
+    let digits = numStr.split('');//b2: su dung phuong thuc spkit de tach tung chu so
+    let s=0;
+    for(let digit of digits){
+        s+=parseInt(digit);   
+    }
+    return s;
+}
+console.log('tong cua cac chu so 156 la:' + sumDigits(156));
 
 
 
