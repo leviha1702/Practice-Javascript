@@ -163,13 +163,38 @@ function sumDigits(n){
     let digits = numStr.split('');//b2: su dung phuong thuc spkit de tach tung chu so
     let s=0;
     for(let digit of digits){
-        s+=parseInt(digit);   
+        s+=parseInt(digit);  //chuyen chu so tu chuoi sang roi tinh tong 
     }
     return s;
 }
 console.log('tong cua cac chu so 156 la:' + sumDigits(156));
-
-
+// chartAt(index):tra ve ki tu ve vi tri chỉ dịnh
+let str = "he lo co a";
+console.log('ki tu o vi tri so 6 :' + str.charAt(6));//o
+// indexOf:tim vi tri dau tien chuoi con
+let ok = "con chim se ";
+console.log(ok.indexOf("se"));//9
+console.log(ok.indexOf("loc"));//-1
+// so lan xuat hien nhiu nhat tron mang
+function mostXuatHien(arr){
+    let max=1;
+    let x;
+    for(let i=0;i<arr.length-1;i++){
+        let dem=1;
+        for(let j=1;j<arr.length;j++){
+            if(arr[i]==arr[j]){
+                dem++;
+                arr.splice(j,1);
+            }
+        }
+        if(dem>max){
+            max=dem;
+            x=arr[i];
+        }
+    }
+    return x;
+}
+console.log("phan tu xuat hien nhieu nhat trong mang:" + mostXuatHien([2,3,5,5,5,6,7,8]));
 
 
 
