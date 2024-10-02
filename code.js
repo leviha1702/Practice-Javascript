@@ -76,7 +76,7 @@ fizzBuzz(15);
 function compareNumbers(a,b){
     return b-a;
 }
-let a = [1,5,4,2];
+let a = [1,5,5,8,8,4,2];
 console.log(a.sort(compareNumbers));
 // tong ptu trong mang
 function sumArray(arr){
@@ -195,6 +195,38 @@ function mostXuatHien(arr){
     return x;
 }
 console.log("phan tu xuat hien nhieu nhat trong mang:" + mostXuatHien([2,3,5,5,5,6,7,8]));
+//delete falsy
+function removeFalsyValues(arr){
+    let newArr=[];
+    let j=0;
+    for(let i=0;i<arr.length;i++){
+        if(Boolean(arr[i])==true){ 
+            newArr[j]=arr[i]; 
+            j++;
+        }
+    }
+    return newArr;
+}
+console.log(removeFalsyValues([0,1,false,2,'',3]));
+console.log(removeFalsyValues([null, NaN, undefined, 4, 5])); // [4, 5]
+//sap xep theo so lan xuat hien cua phan tu
+function sortByFrequency(arr){
+    let newArr={};//tao doi tuong dem so lan xuat hien ptu
+    for(let num of arr){
+        if(newArr[num]){
+            newArr[num]++
+        }  else {
+            newArr[num]=1;
+        }
+    }//sap xep mang dua tren so lan xuat hien
+    return arr.sort((a,b)=> {
+        if(newArr[b]!== newArr[a]){
+            return newArr[b]-newArr[a];
+        }
+    })
+}let arr=[4,5,5,5,4,6,3];
+console.log(sortByFrequency(arr));
+
 
 
 
