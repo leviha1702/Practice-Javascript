@@ -282,4 +282,63 @@ function soSNN(arr){
 }
 console.log(soSNN([4,-4,1,0,2,-1,3]));
 console.log(soSNN([0,-2]));
-
+// switch...case(so ung voi ngay thu may)
+function getDayOfWeek(dayNumber){
+    let dayName;
+    switch(dayNumber){
+        case 1:
+            dayName = "chu nhat";
+            break;
+        case 2:
+            dayName = "thu hai";
+            break;
+        case 3:
+            dayName = "thu ba";
+            break;
+        case 4:
+            dayName = "thu tu";
+            break;
+        case 5:
+            dayName = "thu nam";
+            break;
+        case 6:
+            dayName = "thu sau";
+            break;
+        case 7:
+            dayName = "thu bay";
+            break;
+        default:
+            dayName = "so khong hop le";
+    }
+    return dayName;
+}
+let dayNumber = 4;
+console.log(getDayOfWeek(dayNumber));
+// ham for...in
+function countProperties(obj){
+    let count=0;
+    for(let key in obj){
+        count++;
+    }
+    return count;
+}
+let person = {lastName: "Ha",age: 19, fistName:"Le",city: "Nha Trang" };
+console.log(countProperties(person));
+// ham tinh tong phan tu trong mang dùng for...of
+function sumArr(arr){
+    let s=0;
+    for(let value of arr){
+        s+=value;
+    }
+    return s;
+}
+let arr1 = [3,5,7,8];
+console.log(sumArr(arr1));
+// dung for...in kiem tra object co thhuoc tinh hay khong
+function hasProperty(obj,prop){
+    for(let key in obj){
+        if (key === prop) return true;
+    }
+    return false;
+}
+console.log(hasProperty(person,"fistName"));
