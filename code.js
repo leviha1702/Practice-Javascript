@@ -226,7 +226,60 @@ function sortByFrequency(arr){
     })
 }let arr=[4,5,5,5,4,6,3];
 console.log(sortByFrequency(arr));
-
-
-
+// dem so lan xuat hien tu trong chuoi do
+function countWordFrequency(str){
+    str=str.toLowerCase().replace(/[.,!?;:]/g, '');
+    let word =str.split(' ');
+    let wordFreq={};
+    word.forEach(function(word) {
+        if(wordFreq[word]){
+            wordFreq[word]++;
+        }else {
+            wordFreq[word]=1;
+        } 
+    });
+    return wordFreq;
+}
+let test ="xin chao toi ten ha toi 17 tuoi ";
+console.log(countWordFrequency(test));
+// đao nguoc so nguyen
+function reverseInteger(num){
+    //chuyen so thanh chuoi, tach ki tu va dao nguoc r gop lai chuoi
+    let reversedStr = Math.abs(num).toString().split('').reverse().join('');
+    // chuyen chuoi thanh so
+    let reversedNum = parseInt(reversedStr) * Math.sign(num);
+    return reversedNum;
+}
+console.log(reverseInteger(123));
+// tim so duong nho nhat trong mang
+//c1
+function numDNN(arr){
+    let n=arr.length;
+    let min=-1,m=0;
+    let newArr=[];
+    for(let i=0;i<n;i++){
+        if(arr[i]>0) newArr[m]=arr[i];
+            m++; 
+    }
+    console.log(newArr);
+    min=newArr[0];
+    for(let j=0;j<newArr.length;j++){
+        if(newArr[j]<min) min=newArr[j];
+    }
+    return min;
+}
+console.log(numDNN([4,-4,1,0,2,-1,3]));
+//c2
+function soSNN(arr){
+    //loc so duong
+    let positoveNumbers = arr.filter(num=>num>0);
+    //neu khong co so duong trong mang
+    if(positoveNumbers.length===0){
+        return false;
+    }
+    let smallestPositive=Math.min(...positoveNumbers);
+    return smallestPositive;
+}
+console.log(soSNN([4,-4,1,0,2,-1,3]));
+console.log(soSNN([0,-2]));
 
