@@ -397,4 +397,19 @@ function sumArrLn(arr){
 }
 let arrLn = [1,2,[5,6,7],6,[6,3,[1,2]],7];
 console.log(sumArrLn(arrLn));
+//ham memoize
+function memoize(fn){
+    let cache={};
+    return function (...args){
+        let key=JSON.stringify(args);
+        if(cache[key]){
+            return cache[key];
+        }
+        let result=fn(...args);
+        cache[key]=result;
+        return result;
+    }
+}
+let memoizeFibonacci=memoize(fibonancci);
+console.log(memoizeFibonacci(5));
 
