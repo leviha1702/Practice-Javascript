@@ -342,3 +342,59 @@ function hasProperty(obj,prop){
     return false;
 }
 console.log(hasProperty(person,"fistName"));
+// ham promise
+function taskOne(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{resolve("Task 1 complete!");},2000);
+    });
+}
+function taskTwo(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{resolve("Task 2 complete!");},1000);
+    });
+}
+function taskThree(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{resolve("Task 3 complete!");},3000);
+    });
+}
+taskOne().then((result)=>{console.log(result);
+    return taskTwo();
+})
+.then((result)=>{ console.log(result);
+    return taskThree();
+})
+.then((result)=>{ console.log(result);
+})
+.catch((error)=>{ console.error("Error:",error);
+});
+//tim cap co trong mang co tong bang tong cho truoc
+function findPairs(arr,sum){
+    let seen=new Set();
+    let pairs=[];
+    for(let num of arr){
+       let complement = sum-num;
+       if(seen.has(complement)){ pairs.push([complement,num]);
+       }
+       seen.add(num);
+    }
+    return pairs;
+}
+let arr2=[8,1,2,5,6];
+let sum1 = 6;
+console.log(findPairs(arr2,sum1));
+// tinh tong cac phan tu trong mang long nhau
+function sumArrLn(arr){
+    let sum=0;
+    for(let item of arr){
+        if(Array.isArray(item)){
+            sum+=sumArrLn(item);
+        } else{
+            sum+=item;
+        }
+    }
+    return sum;
+}
+let arrLn = [1,2,[5,6,7],6,[6,3,[1,2]],7];
+console.log(sumArrLn(arrLn));
+
