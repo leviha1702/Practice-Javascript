@@ -412,4 +412,32 @@ function memoize(fn){
 }
 let memoizeFibonacci=memoize(fibonancci);
 console.log(memoizeFibonacci(5));
-
+//closure counter
+function creatCounter(){
+    let count = 0;
+    return function(){
+        count++;
+        return count;
+    };
+}
+let count1=creatCounter();
+console.log(count1());
+console.log(count1());
+let count2=creatCounter();
+console.log(count2());
+//throttle
+function throttle(fn,limit){
+    let lastCall=0;
+    return function (...args){
+        const now = new Date().getTime();
+        if(now - lastCall>=limit){
+            lastCall= now;
+            fn(...args);
+        }
+    };
+}
+function log(){
+    console.log('ham thuc thi');
+}
+const throttleLog = throttle(log,2000);
+window.addEventListener('scroll',throttleLog);
