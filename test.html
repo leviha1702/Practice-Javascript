@@ -21,6 +21,10 @@
     document.write("<input type= text name = msg value='Welcome to'");
     var D = new Date();
     document.title = "Bay gio la: "+ D.getHours() + "gio" + D.getMinutes()+"phut.";
+    var NamSinh, NamHienTai;
+    NamHienTai = D.getFullYear();
+    NamSinh = prompt("Ban sinh nam bao nhieu?:","");
+    alert("Tuoi cua ban la :" + (NamHienTai-NamSinh));
 </script>
 </body>
 </html>

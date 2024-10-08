@@ -441,3 +441,12 @@ function log(){
 }
 const throttleLog = throttle(log,2000);
 window.addEventListener('scroll',throttleLog);
+// BCNN
+function BCNN(a,b){
+    let min=a*b;
+    for(let i=1;i<=a*b;i++){
+        if(i%a==0&&i%b==0&&i<min) min=i;
+    }
+    return min;
+}
+console.log("boi chung nho nhat cua 5 va 10:" + BCNN(5,10));
