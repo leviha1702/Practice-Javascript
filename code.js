@@ -442,11 +442,18 @@ function log(){
 const throttleLog = throttle(log,2000);
 window.addEventListener('scroll',throttleLog);
 // BCNN
-function BCNN(a,b){
-    let min=a*b;
-    for(let i=1;i<=a*b;i++){
-        if(i%a==0&&i%b==0&&i<min) min=i;
+function BCNN(number1,number2){
+    let min=number1*number2;
+    for(let i=1;i<=number1*number2;i++){
+        if(i%number1==0&&i%number2==0&&i<min) min=i;
     }
     return min;
 }
 console.log("boi chung nho nhat cua 5 va 10:" + BCNN(5,10));
+//UCLN
+function UCLN(num1,num2){
+    return BCNN(num1,num2)/(num1*num2);
+}
+console.log("uoc so chung lon nhat cua 5 va 10"+ UCLN(5,10));
+
+
