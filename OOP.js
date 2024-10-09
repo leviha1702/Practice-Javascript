@@ -4,10 +4,13 @@ class laptop{
         this.model = model;
         this.year = year;
     }
+    buy(){
+        console.log(`${this.brand}${this.model} purchased by me in ${this.year}`);
+    }
     sell(){
-        console.log(`${this.brand}${this.model}is selling at ${this.year}`);
-
+        return `My${this.brand}${this.model} will sell in future.`
     }
 }
 const myLaptop = new laptop("Asus","Vivobook 15",2024);
-myLaptop.sell();
+myLaptop.buy ();
+console.log(myLaptop.sell());
