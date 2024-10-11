@@ -1,11 +1,11 @@
 //OPP
 class laptop{
     constructor(brand,model,year){
-        this.brand = brand;
+        this.brand = brand;// thuộc tính
         this.model = model;
         this.year = year;
     }
-    buy(){
+    buy(){//phương thức
         console.log(`${this.brand}${this.model} purchased by me in ${this.year}`);
     }
     sell(){
@@ -16,7 +16,7 @@ const myLaptop = new laptop("Asus","Vivobook 15",2024);
 myLaptop.buy ();
 console.log(myLaptop.sell());
 //Inheritance:tính kế thừa
-class phone extends laptop{
+class phone extends laptop{//kế thừa
     constructor(brand,model,year,phoneNumber){
     super(brand,model,year);//goi lai construct để thừa hưởng
     this.phoneNumber=phoneNumber;
@@ -27,3 +27,4 @@ class phone extends laptop{
 }
 const myPhone = new phone("Iphone","11 Pro Max",2024,"00039828");
 myPhone.own();
+// 
